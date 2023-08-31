@@ -12,13 +12,14 @@ export abstract class Gene<T> {
 }
 
 export class Individual<T> {
-  constructor(
-    public readonly gene: Gene<T>,
-    public fitness: Fitness | undefined = undefined
-  ) {}
+  constructor(public readonly gene: Gene<T>, public fitness: Fitness) {}
 
   evaluateFitness() {
     this.fitness = this.gene.evaluateFitness();
+  }
+
+  isOptimal() {
+    return this.fitness.value === 0;
   }
 }
 
@@ -57,7 +58,7 @@ export class Population<T> {
     return selectionFunction.execute(this);
   }
 
-  findOptimalIndividual(): Individual<T> | undefined {
-    return this.individuals.find((it) => it.fitness?.value === 0);
+  getMostOptimalIndividual(): Individual<T> {
+    return this.individuals.minByOrUndefined((it) => it.fitness!.value)!;
   }
 }

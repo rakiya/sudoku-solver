@@ -26,7 +26,15 @@ export class SudokuSolver {
   }
 
   execute(): SudokuBoard | undefined {
-    // return undefined;
-    return this.geneticAlgorithm.execute();
+    for (const result of this.geneticAlgorithm.execute()) {
+      console.log(`世代: ${result.generation}`);
+      console.log(result.result.toString());
+
+      if (result.isOptimal) {
+        return result.result;
+      }
+    }
+
+    return undefined;
   }
 }

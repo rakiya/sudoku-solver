@@ -1,7 +1,6 @@
 import "@rakiya/tslin";
 import { range, repeat } from "@rakiya/tslin";
 import clone from "clone";
-import { Gene } from "../genetic-algorithm/organism";
 import { SudokuBoard } from "../sudoku-board";
 import { SudokuGene } from "./sudoku-gene";
 
