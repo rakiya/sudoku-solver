@@ -1,0 +1,111 @@
+import { Square, SudokuBoard } from "@/domain/sudoku-board";
+import { SudokuIssueRepository } from "@/infrastructure/repository/sudoku-issue-repository";
+
+test("ボードを作成できること", () => {
+  const actual = SudokuIssueRepository.get(
+    "./tests/resources/sudoku-issue-1.txt"
+  );
+  expect(actual).toEqual(
+    new SudokuBoard([
+      [
+        new Square(8),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(5),
+        new Square(1),
+        new Square(undefined),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(undefined),
+        new Square(1),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(8),
+        new Square(undefined),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(4),
+        new Square(undefined),
+        new Square(2),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(9),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(3),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(2),
+      ],
+      [
+        new Square(1),
+        new Square(2),
+        new Square(3),
+        new Square(4),
+        new Square(undefined),
+        new Square(6),
+        new Square(7),
+        new Square(8),
+        new Square(9),
+      ],
+      [
+        new Square(6),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(1),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(8),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(9),
+        new Square(undefined),
+        new Square(5),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(undefined),
+        new Square(2),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(4),
+        new Square(undefined),
+        new Square(undefined),
+      ],
+      [
+        new Square(undefined),
+        new Square(undefined),
+        new Square(7),
+        new Square(6),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(undefined),
+        new Square(1),
+      ],
+    ])
+  );
+});
