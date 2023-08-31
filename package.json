@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "run": "ts-node -r tsconfig-paths/register src/index.ts",
+    "solve": "ts-node -r tsconfig-paths/register src/index.ts",
     "test": "jest"
   },
   "author": "",
