@@ -27,7 +27,7 @@ export class SudokuSolver {
 
   execute(): SudokuBoard | undefined {
     for (const result of this.geneticAlgorithm.execute()) {
-      console.log(`世代: ${result.generation}`);
+      console.log(`世代: ${result.generation} (評価値: ${result.fitness})`);
       console.log(result.result.toString());
 
       if (result.isOptimal) {

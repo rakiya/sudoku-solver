@@ -10,6 +10,7 @@ export interface GeneticAlgorithmParameters {
 export interface GeneticAlgorithmResult<T> {
   generation: number;
   result: T;
+  fitness: number;
   isOptimal: boolean;
 }
 
@@ -34,6 +35,7 @@ export class GeneticAlgorithm<T> {
       yield {
         generation,
         result: mostOptimalIndividual.gene.value,
+        fitness: mostOptimalIndividual.fitness.value,
         isOptimal: mostOptimalIndividual.isOptimal(),
       };
       if (mostOptimalIndividual.isOptimal()) {
